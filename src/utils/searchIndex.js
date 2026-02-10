@@ -33,6 +33,7 @@ function buildSearchIndex() {
       { name: 'content', weight: 1 },
     ],
     threshold: 0.35,
+    ignoreLocation: true,
     includeMatches: true,
     includeScore: true,
     minMatchCharLength: 2,

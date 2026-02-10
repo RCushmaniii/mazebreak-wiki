@@ -2,10 +2,12 @@ import { useState, useEffect, useCallback } from 'react';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import SearchModal from './SearchModal';
+import useTheme from '../hooks/useTheme';
 
 export default function Layout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   // Ctrl+K to open search
   const handleKeyDown = useCallback((e) => {
@@ -13,7 +15,6 @@ export default function Layout({ children }) {
       e.preventDefault();
       setSearchOpen(true);
     }
-    // Ctrl+[ and Ctrl+] for chapter navigation handled in ChapterPage
   }, []);
 
   useEffect(() => {
@@ -26,6 +27,8 @@ export default function Layout({ children }) {
       <Header
         onSearchOpen={() => setSearchOpen(true)}
         onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
+        theme={theme}
+        onThemeToggle={toggleTheme}
       />
       <Sidebar
         isOpen={sidebarOpen}

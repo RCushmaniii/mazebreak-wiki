@@ -1,8 +1,8 @@
 import { UserButton } from '@clerk/clerk-react';
-import { Search, Menu } from 'lucide-react';
+import { Search, Menu, Sun, Moon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export default function Header({ onSearchOpen, onMenuToggle }) {
+export default function Header({ onSearchOpen, onMenuToggle, theme, onThemeToggle }) {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 h-14 bg-bg-secondary/80 backdrop-blur-md border-b border-border flex items-center px-4 gap-3">
       {/* Mobile menu toggle */}
@@ -34,6 +34,15 @@ export default function Header({ onSearchOpen, onMenuToggle }) {
         <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-bg-secondary border border-border rounded text-xs text-text-tertiary">
           Ctrl+K
         </kbd>
+      </button>
+
+      {/* Theme toggle */}
+      <button
+        onClick={onThemeToggle}
+        className="p-2 text-text-secondary hover:text-text-primary transition-colors rounded-md hover:bg-bg-elevated"
+        aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+      >
+        {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
       </button>
 
       {/* User button */}

@@ -4,6 +4,8 @@ Private, searchable documentation wiki for the MazeBreak Game Design Document. P
 
 Built for a 2-person Roblox development team that needs to quickly reference design rules, enemy stats, system specs, and architecture decisions while working in Roblox Studio.
 
+**Demo:** [mazebreak-wiki.vercel.app](https://mazebreak-wiki.vercel.app/)
+
 ---
 
 ## Features

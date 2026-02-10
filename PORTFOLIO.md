@@ -26,7 +26,8 @@ thumbnail: ""
 hero_images: []
 demo_video_url: ""
 
-live_url: ""
+live_url: "https://mazebreak-wiki.vercel.app/"
+demo_url: "https://mazebreak-wiki.vercel.app/"
 case_study_url: ""
 
 problem_solved: |

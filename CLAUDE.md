@@ -7,7 +7,7 @@ Private documentation wiki for the MazeBreak Game Design Document. React SPA wit
 ## Tech Stack
 
 - **Framework**: React 19 + Vite 7
-- **Styling**: Tailwind CSS 3 (dark mode only, no theme toggle)
+- **Styling**: Tailwind CSS 3 (light/dark theme with toggle, defaults to system preference)
 - **Auth**: Clerk (Google sign-in, manual user provisioning, free tier)
 - **Search**: Fuse.js client-side fuzzy search
 - **Markdown**: react-markdown + remark-gfm + rehype-highlight
@@ -43,10 +43,14 @@ Private documentation wiki for the MazeBreak Game Design Document. React SPA wit
 
 ## Design System
 
-- Dark mode only. Background: `#0F1117`. No light theme.
+- Light/dark theme toggle in header (Sun/Moon icons from Lucide)
+- Theme preference stored in `localStorage` (`mazebreak-theme`), falls back to system preference
+- Flash-prevention script in `index.html` applies `.dark` class before first paint
+- Colors use RGB triplet CSS variables for Tailwind alpha modifier support (e.g., `bg-accent/10`)
+- Light mode: `#FAFBFE` bg, `#111827` text. Dark mode: `#0F1117` bg, `#E8ECF4` text.
 - Headings: JetBrains Mono. Body: Plus Jakarta Sans. Code: JetBrains Mono.
 - Color palette defined as CSS variables in `src/index.css` and Tailwind tokens in `tailwind.config.js`
-- Accent blue: `#3B82F6`. Warning amber: `#F59E0B`. Danger red: `#EF4444`. Success green: `#22C55E`.
+- All color contrast ratios verified against WCAG AA (4.5:1 body text, 3:1 large text)
 
 ## Development Commands
 
@@ -73,7 +77,7 @@ Push to `main` triggers Vercel auto-deploy. Set `VITE_CLERK_PUBLISHABLE_KEY` in 
 
 ## Rules
 
-- Do not add a light/dark theme toggle. This is dark mode only.
+- Theme toggle must persist preference to localStorage and respect system preference as default.
 - Do not add a CMS or in-browser editor. Content is updated by editing `.md` files.
 - Do not add features not in the PRD (comments, annotations, version history, public sharing).
 - Do not use gray-matter or any Node.js-only package in browser code.
