@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0F1117;
+  --bg-secondary: #161923;
+  --bg-elevated: #1E2230;
+  --border: #2A2F3E;
+  --text-primary: #E8ECF4;
+  --text-secondary: #8B92A8;
+  --text-tertiary: #565D73;
+  --accent: #3B82F6;
+  --accent-hover: #2563EB;
+  --accent-success: #22C55E;
+  --accent-warning: #F59E0B;
+  --accent-danger: #EF4444;
+  --search-highlight: rgba(245, 158, 11, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Markdown prose styling */
+.prose-wiki {
+  color: var(--text-primary);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.prose-wiki h1 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.prose-wiki h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.prose-wiki h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.prose-wiki h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.prose-wiki p {
+  margin-bottom: 1.25rem;
+}
+
+.prose-wiki a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.prose-wiki a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.prose-wiki strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.prose-wiki em {
+  color: var(--text-secondary);
+}
+
+.prose-wiki ul,
+.prose-wiki ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose-wiki li {
+  margin-bottom: 0.375rem;
+}
+
+.prose-wiki li > ul,
+.prose-wiki li > ol {
+  margin-top: 0.375rem;
+  margin-bottom: 0;
+}
+
+/* Tables */
+.prose-wiki table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.prose-wiki thead th {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+}
+
+.prose-wiki tbody td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.prose-wiki tbody tr:nth-child(even) {
+  background: rgba(30, 34, 48, 0.5);
+}
+
+.prose-wiki tbody tr:hover {
+  background: var(--bg-elevated);
+}
+
+/* Table wrapper for horizontal scroll on mobile */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.table-wrapper table {
+  margin-bottom: 0;
+  border: none;
+}
+
+.table-wrapper th:first-child,
+.table-wrapper td:first-child {
+  border-left: none;
+}
+
+.table-wrapper th:last-child,
+.table-wrapper td:last-child {
+  border-right: none;
+}
+
+.table-wrapper thead tr:first-child th {
+  border-top: none;
+}
+
+.table-wrapper tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Blockquotes */
+.prose-wiki blockquote {
+  border-left: 3px solid var(--accent);
+  background: var(--bg-elevated);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 0 6px 6px 0;
+}
+
+.prose-wiki blockquote p {
+  margin-bottom: 0;
+  color: var(--text-secondary);
+}
+
+.prose-wiki blockquote strong {
+  color: var(--text-primary);
+}
+
+/* Warning blockquotes */
+.prose-wiki blockquote.callout-warning {
+  border-left-color: var(--accent-warning);
+}
+
+.prose-wiki blockquote.callout-danger {
+  border-left-color: var(--accent-danger);
+}
+
+.prose-wiki blockquote.callout-success {
+  border-left-color: var(--accent-success);
+}
+
+/* Code blocks */
+.prose-wiki code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.875em;
+  background: var(--bg-elevated);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: var(--accent-warning);
+}
+
+.prose-wiki pre {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.prose-wiki pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* Horizontal rules */
+.prose-wiki hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* Search highlight */
+.search-highlight {
+  background: var(--search-highlight);
+  color: var(--accent-warning);
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
+}
+
+/* Highlight.js theme overrides for dark mode */
+.hljs {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
