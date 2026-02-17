@@ -22,9 +22,16 @@ tags:
   - "search"
   - "authentication"
 
-thumbnail: ""
-hero_images: []
-demo_video_url: ""
+thumbnail: "/images/mazebreak-wiki-01.png"
+hero_images:
+  - "/images/mazebreak-wiki-01.png"
+  - "/images/mazebreak-wiki-02.png"
+  - "/images/mazebreak-wiki-03.png"
+  - "/images/mazebreak-wiki-04.png"
+  - "/images/mazebreak-wiki-05.png"
+  - "/images/mazebreak-wiki-06.png"
+  - "/images/mazebreak-wiki-07.png"
+demo_video_url: "/video/MazeBreak__Taming_the_GDD.mp4"
 
 live_url: "https://mazebreak-wiki.vercel.app/"
 demo_url: "https://mazebreak-wiki.vercel.app/"
@@ -112,6 +119,33 @@ The MazeBreak GDD Wiki addresses each friction point with targeted design decisi
 - Syntax-highlighted code blocks for Luau snippets in the GDD
 - Tables render with proper styling — critical for stat tables, damage matrices, and loot probabilities
 - Design rule blockquotes render with colored accents (blue for rules, amber for warnings, red for danger)
+
+## Video Walkthrough
+
+[MazeBreak: Taming the GDD](/video/MazeBreak__Taming_the_GDD.mp4) — A full walkthrough of the documentation engine, demonstrating search, navigation, theming, and PDF export.
+
+## Screenshots
+
+![The Documentation Engine for Game Design](/images/mazebreak-wiki-01.png)
+*Hero — The documentation engine transforms scattered design files into a single searchable platform.*
+
+![The 200-Page Monster](/images/mazebreak-wiki-02.png)
+*The Problem — Unreadable monoliths, scattered threads, and days wasted hunting for basic rules.*
+
+![Order from Chaos](/images/mazebreak-wiki-03.png)
+*The Workflow — Markdown native content, Git push, instant deploy. Single source of truth.*
+
+![Documentation Engine Cover](/images/mazebreak-wiki-04.png)
+*MazeBreak GDD Wiki — Purpose-built documentation for game development teams.*
+
+![Smart Engineering Decisions](/images/mazebreak-wiki-05.png)
+*Architecture — Vite eager imports, Fuse.js client-side search, React Router, and browser-native print.*
+
+![Stop Managing Documents](/images/mazebreak-wiki-06.png)
+*Value Proposition — Search speed of Algolia, reading experience of Stripe, cost of static HTML.*
+
+![Taming the 200-Page GDD Monster](/images/mazebreak-wiki-07.png)
+*Full Infographic — Problem, solution, architecture, and technical decisions at a glance.*
 
 ## Technical Highlights
 

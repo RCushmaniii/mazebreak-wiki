@@ -6,6 +6,10 @@ Built for a 2-person Roblox development team that needs to quickly reference des
 
 **Demo:** [mazebreak-wiki.vercel.app](https://mazebreak-wiki.vercel.app/)
 
+**Video Walkthrough:** [MazeBreak: Taming the GDD](public/video/MazeBreak__Taming_the_GDD.mp4)
+
+![MazeBreak GDD Wiki](public/images/mazebreak-wiki-01.png)
+
 ---
 
 ## Features
@@ -17,6 +21,7 @@ Built for a 2-person Roblox development team that needs to quickly reference des
 | Markdown-driven content | Update GDD content by editing `.md` files and pushing to Git — Vercel auto-deploys |
 | Clerk authentication | Access restricted to invited team members only via Google sign-in |
 | Dark mode UI | High-contrast, developer-tool aesthetic designed for extended reference sessions |
+| PDF export | One-click full GDD export with cover page, table of contents, and group-level page breaks |
 | Responsive layout | Three-column desktop, single-column mobile — usable on any device |
 
 ---
@@ -100,7 +105,9 @@ Only manually-created users can authenticate. No one else can create an account.
 
 ```
 mazebreak-wiki/
-├── public/                         # Static assets
+├── public/
+│   ├── images/                     # Portfolio screenshots (01–07)
+│   └── video/                      # Demo video walkthrough
 ├── src/
 │   ├── main.jsx                    # Entry point, Clerk + Router providers
 │   ├── App.jsx                     # Route definitions, auth wrappers
@@ -115,7 +122,8 @@ mazebreak-wiki/
 │   │   └── SearchHighlight.jsx     # Highlights matched terms in results
 │   ├── pages/
 │   │   ├── HomePage.jsx            # Dashboard with chapter cards by group
-│   │   └── ChapterPage.jsx         # Single chapter reader with prev/next nav
+│   │   ├── ChapterPage.jsx         # Single chapter reader with prev/next nav
+│   │   └── PrintPage.jsx           # Full GDD export for PDF (all 24 chapters)
 │   ├── content/                    # All GDD chapters as .md files
 │   │   ├── index.js                # Chapter registry (source of truth for nav)
 │   │   ├── 01-game-overview.md
