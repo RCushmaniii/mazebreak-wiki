@@ -3,6 +3,7 @@ import { SignedIn, SignedOut, SignIn } from '@clerk/clerk-react';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import ChapterPage from './pages/ChapterPage';
+import PrintPage from './pages/PrintPage';
 
 function App() {
   return (
@@ -20,13 +21,21 @@ function App() {
       </SignedOut>
 
       <SignedIn>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/chapter/:chapterId" element={<ChapterPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </Layout>
+        <Routes>
+          <Route path="/print" element={<PrintPage />} />
+          <Route
+            path="*"
+            element={
+              <Layout>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/chapter/:chapterId" element={<ChapterPage />} />
+                  <Route path="*" element={<Navigate to="/" replace />} />
+                </Routes>
+              </Layout>
+            }
+          />
+        </Routes>
       </SignedIn>
     </>
   );

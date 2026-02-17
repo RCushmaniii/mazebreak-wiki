@@ -320,3 +320,325 @@ body,
 body * {
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
+
+/* ============================================================
+   Print page — screen styles
+   ============================================================ */
+.print-document {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #111827;
+  background: #ffffff;
+}
+
+.print-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  margin-bottom: 2rem;
+  background: #f0f2f7;
+  border: 1px solid #d0d5e1;
+  border-radius: 8px;
+}
+
+.print-toolbar-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+}
+
+.print-toolbar-back:hover {
+  color: #2563eb;
+}
+
+.print-toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #2563eb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.print-toolbar-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Cover page */
+.print-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.print-cover-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.print-cover-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.03em;
+}
+
+.print-cover-subtitle {
+  font-size: 1.5rem;
+  color: #374151;
+  font-weight: 400;
+}
+
+.print-cover-meta {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.print-cover-separator {
+  margin: 0 0.75rem;
+}
+
+/* Table of contents */
+.print-toc {
+  margin-bottom: 3rem;
+}
+
+.print-toc-heading {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #d0d5e1;
+}
+
+.print-toc-group {
+  margin-bottom: 1.25rem;
+}
+
+.print-toc-group-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.375rem;
+}
+
+.print-toc-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.print-toc-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.print-toc-chapter-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #6b7280;
+  flex-shrink: 0;
+  width: 1.5rem;
+}
+
+.print-toc-chapter-title {
+  color: #111827;
+}
+
+/* Group headings in the body */
+.print-group {
+  margin-bottom: 2rem;
+}
+
+.print-group-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #2563eb;
+}
+
+.print-chapter {
+  margin-bottom: 3rem;
+}
+
+/* ============================================================
+   Print media — hide chrome, force light colors, page breaks
+   ============================================================ */
+@media print {
+  /* Hide screen-only UI */
+  .print-toolbar {
+    display: none !important;
+  }
+
+  /* Reset page layout */
+  .print-document {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #111827;
+  }
+
+  /* Page settings */
+  @page {
+    size: letter;
+    margin: 0.75in;
+  }
+
+  /* Cover page gets its own page */
+  .print-cover {
+    min-height: auto;
+    height: 100vh;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  /* TOC gets its own page */
+  .print-toc {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  /* Each group starts on a new page */
+  .print-group {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* Avoid orphaned headings */
+  .print-chapter h1,
+  .print-chapter h2,
+  .print-chapter h3,
+  .print-chapter h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Keep tables, images, blockquotes together */
+  .print-chapter table,
+  .print-chapter blockquote,
+  .print-chapter pre,
+  .print-chapter img {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Force light-mode colors for all prose elements */
+  .prose-wiki,
+  .prose-wiki * {
+    color: #111827 !important;
+  }
+
+  .prose-wiki h1,
+  .prose-wiki h2,
+  .prose-wiki h3,
+  .prose-wiki h4,
+  .prose-wiki strong {
+    color: #111827 !important;
+  }
+
+  .prose-wiki em,
+  .prose-wiki blockquote p {
+    color: #374151 !important;
+  }
+
+  .prose-wiki h2 {
+    border-bottom-color: #d0d5e1 !important;
+  }
+
+  .prose-wiki blockquote {
+    background: #f0f2f7 !important;
+    border-left-color: #2563eb !important;
+  }
+
+  .prose-wiki blockquote.callout-warning {
+    border-left-color: #b45309 !important;
+  }
+
+  .prose-wiki blockquote.callout-danger {
+    border-left-color: #b91c1c !important;
+  }
+
+  .prose-wiki blockquote.callout-success {
+    border-left-color: #16a34a !important;
+  }
+
+  .prose-wiki code {
+    background: #fef3c7 !important;
+    color: #92400e !important;
+  }
+
+  .prose-wiki pre {
+    background: #f0f2f7 !important;
+    border-color: #d0d5e1 !important;
+  }
+
+  .prose-wiki pre code {
+    background: none !important;
+    color: #111827 !important;
+  }
+
+  .prose-wiki thead th {
+    background: #f0f2f7 !important;
+    color: #111827 !important;
+    border-color: #d0d5e1 !important;
+  }
+
+  .prose-wiki tbody td {
+    border-color: #d0d5e1 !important;
+    color: #111827 !important;
+  }
+
+  .prose-wiki a {
+    color: #2563eb !important;
+  }
+
+  /* Show URLs after external links */
+  .prose-wiki a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #6b7280 !important;
+    word-break: break-all;
+  }
+
+  /* Group title styling in print */
+  .print-group-title {
+    color: #111827 !important;
+    border-bottom-color: #2563eb !important;
+  }
+
+  /* Remove transitions for print */
+  * {
+    transition: none !important;
+  }
+}

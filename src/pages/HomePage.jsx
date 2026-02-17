@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import * as Icons from 'lucide-react';
+import { Printer } from 'lucide-react';
 import { chapters, chapterGroups } from '../content/index.js';
 
 function ChapterIcon({ name, size = 20 }) {
@@ -19,9 +20,16 @@ export default function HomePage() {
         <p className="text-lg text-text-secondary mb-1">
           Game Design Document
         </p>
-        <p className="text-sm text-text-tertiary">
+        <p className="text-sm text-text-tertiary mb-4">
           v2.0 — Single source of truth for all game design decisions
         </p>
+        <Link
+          to="/print"
+          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-text-secondary bg-bg-secondary border border-border rounded-lg hover:border-text-tertiary hover:text-accent transition-all"
+        >
+          <Printer size={16} />
+          Export Full GDD
+        </Link>
       </div>
 
       {/* Chapter groups */}
