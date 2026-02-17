@@ -1,5 +1,5 @@
 import { UserButton } from '@clerk/clerk-react';
-import { Search, Menu, Sun, Moon } from 'lucide-react';
+import { Search, Menu, Sun, Moon, Printer } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Header({ onSearchOpen, onMenuToggle, theme, onThemeToggle }) {
@@ -35,6 +35,16 @@ export default function Header({ onSearchOpen, onMenuToggle, theme, onThemeToggl
           Ctrl+K
         </kbd>
       </button>
+
+      {/* Export PDF */}
+      <Link
+        to="/print"
+        className="p-2 text-text-secondary hover:text-text-primary transition-colors rounded-md hover:bg-bg-elevated"
+        aria-label="Export full GDD as PDF"
+        title="Export full GDD as PDF"
+      >
+        <Printer size={18} />
+      </Link>
 
       {/* Theme toggle */}
       <button
