@@ -1,57 +1,14 @@
 ---
-# =============================================================================
-# PORTFOLIO.md — MazeBreak GDD Wiki
-# =============================================================================
-
+# === CONTROL FLAGS ===
 portfolio_enabled: true
 portfolio_priority: 3
 portfolio_featured: true
-portfolio_last_reviewed: "2026-02-09"
 
+# === CARD DISPLAY ===
 title: "MazeBreak GDD Wiki"
 tagline: "Private, searchable game design document wiki for a Roblox development team"
 slug: "mazebreak-gdd-wiki"
-
 category: "Developer Tools"
-target_audience: "Game development teams needing fast, searchable access to design documentation"
-tags:
-  - "developer-tools"
-  - "documentation"
-  - "react"
-  - "game-development"
-  - "search"
-  - "authentication"
-
-thumbnail: "/images/mazebreak-wiki-01.png"
-hero_images:
-  - "/images/mazebreak-wiki-01.png"
-  - "/images/mazebreak-wiki-02.png"
-  - "/images/mazebreak-wiki-03.png"
-  - "/images/mazebreak-wiki-04.png"
-  - "/images/mazebreak-wiki-05.png"
-  - "/images/mazebreak-wiki-06.png"
-  - "/images/mazebreak-wiki-07.png"
-demo_video_url: "/video/MazeBreak__Taming_the_GDD.mp4"
-
-live_url: "https://mazebreak-wiki.vercel.app/"
-demo_url: "https://mazebreak-wiki.vercel.app/"
-case_study_url: ""
-
-problem_solved: |
-  Game design documents are typically 30+ page Word files that are difficult to
-  navigate, search, and reference during active development. Team members waste
-  time scrolling through monolithic documents to find specific stats, design rules,
-  or system specifications while working in Roblox Studio or writing Luau scripts.
-  There is no fast way to cross-reference related systems or search across sections.
-
-key_outcomes:
-  - "Full-text fuzzy search across 24 GDD chapters in under 50ms"
-  - "Keyboard-driven navigation (Ctrl+K search, Ctrl+[ / Ctrl+] chapter nav)"
-  - "Content updates deploy automatically — edit markdown, push to Git, live in 60 seconds"
-  - "Restricted access via Clerk authentication with zero monthly cost"
-  - "357 KB gzipped bundle serving the entire GDD as a single-page application"
-  - "Dark mode UI designed for extended reference sessions alongside Roblox Studio"
-
 tech_stack:
   - "React 19"
   - "Vite 7"
@@ -60,9 +17,49 @@ tech_stack:
   - "Fuse.js"
   - "React Router v6"
   - "Vercel"
+thumbnail: "/images/mazebreak-wiki-01.png"
 
-complexity: "Production"
+# === DETAIL PAGE ===
 
+# === MEDIA: PORTFOLIO SLIDES ===
+slides:
+  - src: "/images/mazebreak-wiki-01.png"
+    alt_en: "MazeBreak GDD Wiki slide 1"
+    alt_es: "MazeBreak GDD Wiki diapositiva 1"
+  - src: "/images/mazebreak-wiki-02.png"
+    alt_en: "MazeBreak GDD Wiki slide 2"
+    alt_es: "MazeBreak GDD Wiki diapositiva 2"
+  - src: "/images/mazebreak-wiki-03.png"
+    alt_en: "MazeBreak GDD Wiki slide 3"
+    alt_es: "MazeBreak GDD Wiki diapositiva 3"
+  - src: "/images/mazebreak-wiki-04.png"
+    alt_en: "MazeBreak GDD Wiki slide 4"
+    alt_es: "MazeBreak GDD Wiki diapositiva 4"
+  - src: "/images/mazebreak-wiki-05.png"
+    alt_en: "MazeBreak GDD Wiki slide 5"
+    alt_es: "MazeBreak GDD Wiki diapositiva 5"
+  - src: "/images/mazebreak-wiki-06.png"
+    alt_en: "MazeBreak GDD Wiki slide 6"
+    alt_es: "MazeBreak GDD Wiki diapositiva 6"
+  - src: "/images/mazebreak-wiki-07.png"
+    alt_en: "MazeBreak GDD Wiki slide 7"
+    alt_es: "MazeBreak GDD Wiki diapositiva 7"
+
+# === MEDIA: VIDEO ===
+video_url: "/video/MazeBreak__Taming_the_GDD.mp4"
+
+# === LINKS ===
+demo_url: "https://mazebreak-wiki.vercel.app/"
+live_url: "https://mazebreak-wiki.vercel.app/"
+
+# === OPTIONAL ===
+tags:
+  - "developer-tools"
+  - "documentation"
+  - "react"
+  - "game-development"
+  - "search"
+  - "authentication"
 ---
 
 ## Overview
