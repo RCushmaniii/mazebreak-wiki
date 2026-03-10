@@ -20,6 +20,14 @@ tech_stack:
 thumbnail: "/images/mazebreak-wiki-01.png"
 
 # === DETAIL PAGE ===
+problem_solved: |
+  Game design documents start as shared Word files or Google Docs that no one
+  actually consults once development begins — they're too slow to search, too
+  painful to navigate, and too disconnected from the development workflow.
+  A 2-person Roblox team was losing momentum every time they needed to look up
+  an enemy stat, verify a damage formula, or cross-reference loot tables across
+  a 200+ page GDD, turning a 10-second lookup into a 2-minute context switch
+  that broke creative flow in Roblox Studio.
 
 # === MEDIA: PORTFOLIO SLIDES ===
 slides:
