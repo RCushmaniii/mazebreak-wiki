@@ -201,6 +201,14 @@ export const chapters = [
     file: "appendix-c-glossary.md",
     icon: "BookOpen",
     description: "Definitions of key terms used throughout the GDD"
+  },
+  {
+    id: "appendix-d-asset-manifest",
+    chapter: "D",
+    title: "Asset Manifest",
+    file: "appendix-d-asset-manifest.md",
+    icon: "FolderOpen",
+    description: "Complete inventory of all game assets: models, textures, audio, UI, and VFX with production status"
   }
 ];
 
@@ -231,6 +239,6 @@ export const chapterGroups = [
   },
   {
     group: "Appendices",
-    chapters: ["appendix-a-damage-tables", "appendix-b-loot-tables", "appendix-c-glossary"]
+    chapters: ["appendix-a-damage-tables", "appendix-b-loot-tables", "appendix-c-glossary", "appendix-d-asset-manifest"]
   }
 ];
