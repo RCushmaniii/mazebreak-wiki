@@ -28,6 +28,13 @@ problem_solved: |
   an enemy stat, verify a damage formula, or cross-reference loot tables across
   a 200+ page GDD, turning a 10-second lookup into a 2-minute context switch
   that broke creative flow in Roblox Studio.
+solution: |
+  The GDD Wiki turns a 30+ page design document into a private, searchable web app with 24 chapters organized into seven logical groups. A Ctrl+K command palette backed by Fuse.js delivers fuzzy, typo-tolerant search with relevance ranking and snippet previews in under 50 milliseconds. Each chapter is a standalone markdown file imported at build time, so updates ship through the same Git push workflow the team already uses for game code — no CMS or database to manage. Clerk authentication with Google sign-in and disabled public sign-up keeps the design decisions visible only to manually provisioned team members.
+metrics:
+  - "Sub-50ms fuzzy search across all 24 chapters via client-side Fuse.js index"
+  - "Design rules and stat tables reachable in 2-3 keystrokes from any browser"
+  - "Entire app, including all GDD content, ships in a 357 KB gzipped bundle"
+  - "Markdown-to-deploy in under 60 seconds via Git push and Vercel auto-deploy"
 
 # === MEDIA: PORTFOLIO SLIDES ===
 slides:
@@ -85,19 +92,6 @@ health_status:
   dependabot: "Y"
   secret_scanning: "Y"
   db_backup: "-"
-health_status:
-  sentry: "-"
-  testing: "-"
-  ci_cd: "Y"
-  health_endpoint: "n/a"
-  security_headers: "-"
-  rate_limiting: "n/a"
-  env_validation: "n/a"
-  analytics: "DEFERRED"
-  structured_logging: "-"
-  dependabot: "Y"
-  secret_scanning: "Y"
-  db_backup: "-"
 ---
 
 ## Overview
@@ -124,6 +118,7 @@ Without a purpose-built reference tool, design documents become write-once artif
 The MazeBreak GDD Wiki addresses each friction point with targeted design decisions:
 
 **Instant Search:**
+
 - Ctrl+K opens a command-palette-style search modal
 - Fuse.js fuzzy matching finds results even with typos or partial terms
 - Results show chapter title, matched section heading, and text snippet with context
@@ -131,24 +126,28 @@ The MazeBreak GDD Wiki addresses each friction point with targeted design decisi
 - Sub-50ms response time — faster than the developer can finish typing
 
 **Structured Navigation:**
+
 - 24 chapters organized into 7 logical groups (Core Design, Systems, Content & Economy, etc.)
 - Collapsible sidebar with active chapter highlighting
 - Previous/Next chapter navigation at the bottom of every page
 - Right-sidebar table of contents generated from H2/H3 headings with scroll tracking
 
 **Effortless Content Updates:**
+
 - Each chapter is a standalone markdown file with YAML frontmatter
 - Edit a `.md` file, commit, push — Vercel auto-deploys within 60 seconds
 - No CMS to learn, no database to manage, no build step to run manually
 - Git history provides full version tracking for free
 
 **Restricted Access:**
+
 - Clerk authentication with Google sign-in
 - Public sign-up disabled — only manually-provisioned users can access
 - Zero monthly cost on Clerk's free Hobby tier
 - No content visible without authentication
 
 **Developer-First Design:**
+
 - Dark mode UI inspired by Linear, Raycast, and Stripe Docs
 - JetBrains Mono headings, Plus Jakarta Sans body text
 - Syntax-highlighted code blocks for Luau snippets in the GDD
@@ -162,25 +161,25 @@ The MazeBreak GDD Wiki addresses each friction point with targeted design decisi
 ## Screenshots
 
 ![The Documentation Engine for Game Design](/images/mazebreak-wiki-01.png)
-*Hero — The documentation engine transforms scattered design files into a single searchable platform.*
+_Hero — The documentation engine transforms scattered design files into a single searchable platform._
 
 ![The 200-Page Monster](/images/mazebreak-wiki-02.png)
-*The Problem — Unreadable monoliths, scattered threads, and days wasted hunting for basic rules.*
+_The Problem — Unreadable monoliths, scattered threads, and days wasted hunting for basic rules._
 
 ![Order from Chaos](/images/mazebreak-wiki-03.png)
-*The Workflow — Markdown native content, Git push, instant deploy. Single source of truth.*
+_The Workflow — Markdown native content, Git push, instant deploy. Single source of truth._
 
 ![Documentation Engine Cover](/images/mazebreak-wiki-04.png)
-*MazeBreak GDD Wiki — Purpose-built documentation for game development teams.*
+_MazeBreak GDD Wiki — Purpose-built documentation for game development teams._
 
 ![Smart Engineering Decisions](/images/mazebreak-wiki-05.png)
-*Architecture — Vite eager imports, Fuse.js client-side search, React Router, and browser-native print.*
+_Architecture — Vite eager imports, Fuse.js client-side search, React Router, and browser-native print._
 
 ![Stop Managing Documents](/images/mazebreak-wiki-06.png)
-*Value Proposition — Search speed of Algolia, reading experience of Stripe, cost of static HTML.*
+_Value Proposition — Search speed of Algolia, reading experience of Stripe, cost of static HTML._
 
 ![Taming the 200-Page GDD Monster](/images/mazebreak-wiki-07.png)
-*Full Infographic — Problem, solution, architecture, and technical decisions at a glance.*
+_Full Infographic — Problem, solution, architecture, and technical decisions at a glance._
 
 ## Technical Highlights
 
@@ -195,12 +194,14 @@ The MazeBreak GDD Wiki addresses each friction point with targeted design decisi
 ## Results
 
 **For the Development Team:**
+
 - Eliminated time spent scrolling through the Word document during development sessions
 - Design rules and stat tables are accessible in 2-3 keystrokes from any browser
 - Content stays current with the same Git workflow used for game code
 - Both team members have authenticated access without sharing credentials or links
 
 **Technical Demonstration:**
+
 - Full-stack web application architecture (client-side SPA with auth and search)
 - Authentication integration with third-party identity provider (Clerk + Google OAuth)
 - Client-side search engine implementation with fuzzy matching and relevance ranking
